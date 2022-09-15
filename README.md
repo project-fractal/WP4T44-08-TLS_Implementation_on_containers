@@ -19,6 +19,7 @@ These instructions will get your Docker daemon exposed with TLS security and cer
 The configuration of the Docker daemon can be done in two ways:
 * Using flags when manually starting `dockerd`
 * Using a JSON configuration file. This is the preferred option, since it keeps all configurations in a sigle place.
+
 A combination of both can be used as long as the same options is not specified both as a flag and in the JSON file. If that happens, the Docker daemon won't start and prints an error message.
 This document provides guidelines to configure TLS via the JSON file.
 
@@ -134,7 +135,7 @@ Replacing $HOST again with the DNS name of the server.
 
 On systems using `systemd` (eg. Debian and Ubuntu), Docker listens on a socket by default, this means that a host flag `-H` is always used when starting `dockerd`. If a `hosts` entry is specified in the `daemon.json`, this causes a configuration conflict and Docker fails to start.
 
-To work around this issue, there needs to be a new file `/etc/systemd/system/docker.service.d/docker.conf` with the following contents, to remove the `-H` argument that isused when starting the daemon by default.
+To work around this issue, there needs to be a new file `/etc/systemd/system/docker.service.d/docker.conf` with the following contents, to remove the `-H` argument that is used when starting the daemon by default.
 
 ```
 [Service]
