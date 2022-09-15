@@ -134,7 +134,7 @@ Replacing $HOST again with the DNS name of the server.
 
 On systems using `systemd` (eg. Debian and Ubuntu), Docker listens on a socket by default, this means that a host flag `-H` is always used when starting `dockerd`. If a `hosts` entry is specified in the `daemon.json`, this causes a configuration conflict and Docker fails to start.
 
-To work around this issue, there needs to be a new file `/etc/systemd/system/docker.service.d/docker.conf` with the dollowing contents, to remove the `-H` argument that isused when starting the daemon by default.
+To work around this issue, there needs to be a new file `/etc/systemd/system/docker.service.d/docker.conf` with the following contents, to remove the `-H` argument that isused when starting the daemon by default.
 
 ```
 [Service]
